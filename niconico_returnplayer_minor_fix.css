@@ -1,0 +1,41 @@
+/* ==UserStyle==
+@name           ニコ動のプレイヤー周りをいじる
+@namespace      github.com/openstyles/stylus
+@version        2024.10.01
+@description    ニコ動のプレイヤー周りをいじる
+@author         toarugema
+==/UserStyle== */
+@-moz-document domain("nicovideo.jp") {
+
+    /*
+    ニコニコ動画の動画再生画面をカクカクにする（2024年9月修正）
+    from: https://www.naporitansushi.com/niconico-player-non-rounded-corners
+    元のCSSからフォロー中を角丸のままにした
+    */
+    .bdr_m:not(.gap_base .ai_center) {
+        border-radius: 0px !important;
+    }
+    
+    /*
+    コメント欄の長さを調整する
+    ただしコントローラーを常に表示する場合のみ←まだできてない
+    */
+    .h_var\(--watch-player-height\){
+        height: calc(
+            var(--watch-player-height) /*元の高さ*/ 
+            + var(--spacing-base) /*コントローラー再生バー上のマージン*/
+            + var(--sizes-x0_5) /*コントローラー再生バー*/
+            + var(--spacing-x0_5) /*コントローラー再生バー下のマージン*/
+            + var(--sizes-x5) /*コントローラー*/
+            + var(--spacing-x0_5) /*コントローラー最下部のマージン*/
+        ) !important;
+    }
+    
+    /*
+    動画プレイヤーとコメント欄をくっつける
+    */
+    .cg_x3 {
+        column-gap: 0px !important;
+    }
+
+}
