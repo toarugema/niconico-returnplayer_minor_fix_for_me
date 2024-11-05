@@ -1,5 +1,4 @@
-# niconico-returnplayer_minor_fix_by_toarugema
-
+# niconico-returnplayer_minor_fix_for_me
 ニコニコ動画のプレイヤーを個人的にちょっとだけ使いやすくします
 
 ![screenshot](return_nico.png)
