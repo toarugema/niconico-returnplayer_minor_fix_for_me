@@ -1,7 +1,7 @@
 /* ==UserStyle==
-@name           ニコ動のプレイヤー周りをいじる
+@name           niconico-returnplayer_minor_fix_by_toarugema
 @namespace      github.com/openstyles/stylus
-@version        2024.10.01
+@version        1.0.0
 @description    ニコ動のプレイヤー周りをいじる
 @author         toarugema
 ==/UserStyle== */
@@ -18,7 +18,7 @@
     
     /*
     コメント欄の長さを調整する
-    ただしコントローラーを常に表示する場合のみ←まだできてない
+    ただしコントローラーを常に表示する場合のみ←CSSだけだと無理そうなので一旦無し
     */
     .h_var\(--watch-player-height\){
         height: calc(
@@ -36,6 +36,14 @@
     */
     .cg_x3 {
         column-gap: 0px !important;
+    }
+    
+    /*
+    おすすめ欄を離す
+    SUPER THANKS! @ruru@misskey.flowers
+    */
+    div.flex-d_column:nth-child(7) > section:nth-child(2),.grid-area_\[sidebar\] > .d_flex.flex-d_column.gap_x2 > .flex-g_1{
+        padding-left: 20px !important; 
     }
 
 }
