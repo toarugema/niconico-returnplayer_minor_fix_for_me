@@ -1,11 +1,11 @@
 /* ==UserStyle==
 @name           niconico-returnplayer_minor_fix_for_me
 @namespace      github.com/openstyles/stylus
-@version        1.0.0
+@version        1.0.1
 @description    ニコ動のプレイヤー周りをいじる
 @author         toarugema
 ==/UserStyle== */
-@-moz-document domain("nicovideo.jp") {
+@-moz-document url-prefix("https://www.nicovideo.jp/watch/") {
 
     /*
     ニコニコ動画の動画再生画面をカクカクにする（2024年9月修正）
