@@ -46,10 +46,16 @@
         padding-left: 20px !important; 
     }
     
+    /*
+    シリーズやマイリストが右下に表示されている際に歯車を押すと離れていたのが戻ってしまうのを修正
+    */
     section.bdr_m.ov_hidden.d_flex.flex-d_column.h_\[calc\(_var\(--watch-player-height\)_\+_var\(--watch-actionbar-height\)_-_var\(--watch-collapsible-panel-header-height\)_-_var\(--watch-layout-gap-height\)_\)\]{
         padding-left: 20px !important;
     }
     
+    /*
+    生放送の表示を離す
+    */
     div.d_flex.flex-d_column.gap_x2.p_x2.bg-c_layer\.surfaceHighEm.bdr_m{
         margin-left: 20px !important;
     }
