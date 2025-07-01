@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           niconico-returnplayer_minor_fix_for_me
-@namespace      github.com/openstyles/stylus
-@version        1.0.2
+@namespace      https://github.com/toarugema/niconico-returnplayer_minor_fix_for_me
+@version        1.1.0
 @description    ニコ動のプレイヤー周りをいじる
 @author         toarugema
 ==/UserStyle== */
@@ -49,8 +49,21 @@
     /*
     シリーズやマイリストが右下に表示されている際に歯車を押すと離れていたのが戻ってしまうのを修正
     */
+    /*
+    2025/05/07
+    おすすめの動画、マイリスト、シリーズが離れなくなっていた点を修正
+    */
     section.bdr_m.ov_hidden.d_flex.flex-d_column.h_\[calc\(_var\(--watch-player-height\)_\+_var\(--watch-actionbar-height\)_-_var\(--watch-collapsible-panel-header-height\)_-_var\(--watch-layout-gap-height\)_\)\]{
-        padding-left: 20px !important;
+        margin-left: 20px !important;
+        width: var(--sizes-100\%) -20px !important;
+    }
+    
+    /*
+    2025/06/24
+    シリーズやマイリストのアイコン位置調整
+    */
+    div.d_flex.ai_center.gap_x0_5.px_base{
+        margin-left: -20px;
     }
     
     /*
@@ -59,5 +72,14 @@
     div.d_flex.flex-d_column.gap_x2.p_x2.bg-c_layer\.surfaceHighEm.bdr_m{
         margin-left: 20px !important;
     }
+    
+    /*
+    2025/07/02
+    動画プレイヤーを1080p相当まで拡大表示する
+    */
+    section.grid-tc_\[\var\(--watch-player-width\)_var\(--watch-sidebar-width\)\]{
+        --watch-player-max-width: 1920px !important;
+    }
+
 
 }
