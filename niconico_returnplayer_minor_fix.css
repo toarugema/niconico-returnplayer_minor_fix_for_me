@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           niconico-returnplayer_minor_fix_for_me
 @namespace      https://github.com/toarugema/niconico-returnplayer_minor_fix_for_me
-@version        1.1.0
+@version        1.1.1
 @description    ニコ動のプレイヤー周りをいじる
 @author         toarugema
 ==/UserStyle== */
@@ -16,20 +16,33 @@
         border-radius: 0px !important;
     }
     
+    
     /*
     コメント欄の長さを調整する
-    ただしコントローラーを常に表示する場合のみ←CSSだけだと無理そうなので一旦無し
+    ただしコントローラーを常に表示する場合のみ←CSSだけだと無理そうなので一旦無し←ver1.1.1でできた
     */
     .h_var\(--watch-player-height\){
         height: calc(
-            var(--watch-player-height) /*元の高さ*/ 
-            + var(--spacing-base) /*コントローラー再生バー上のマージン*/
-            + var(--sizes-x0_5) /*コントローラー再生バー*/
-            + var(--spacing-x0_5) /*コントローラー再生バー下のマージン*/
-            + var(--sizes-x5) /*コントローラー*/
-            + var(--spacing-x0_5) /*コントローラー最下部のマージン*/
-        ) !important;
+            var(--watch-player-height)
+          + var(--watch-controller-height)
+          - min(var(--watch-controller-height) , 4px ) /*そのままだとなんかズレたのでコントローラー表示時は4pxコメント欄を短く*/
+        )
     }
+    
+    /*
+    1.1.0までの書き方
+    .h_var\(--watch-player-height\){
+        height: calc(
+            var(--watch-player-height) /*元の高さ*/ 
+            /*+ var(--spacing-base) /*コントローラー再生バー上のマージン*/
+            /*+ var(--sizes-x0_5) /*コントローラー再生バー*/
+            /*+ var(--spacing-x0_5) /*コントローラー再生バー下のマージン*/
+            /*+ var(--sizes-x5) /*コントローラー*/
+            /*+ var(--spacing-x0_5) /*コントローラー最下部のマージン*/
+        /*) !important;
+    }
+    */
+    
     
     /*
     動画プレイヤーとコメント欄をくっつける
@@ -59,6 +72,13 @@
     }
     
     /*
+    生放送の表示を離す
+    */
+    div.d_flex.flex-d_column.gap_x2.p_x2.bg-c_layer\.surfaceHighEm.bdr_m{
+        margin-left: 20px !important;
+    }
+    
+    /*
     2025/06/24
     シリーズやマイリストのアイコン位置調整
     */
@@ -66,12 +86,6 @@
         margin-left: -20px;
     }
     
-    /*
-    生放送の表示を離す
-    */
-    div.d_flex.flex-d_column.gap_x2.p_x2.bg-c_layer\.surfaceHighEm.bdr_m{
-        margin-left: 20px !important;
-    }
     
     /*
     2025/07/02
